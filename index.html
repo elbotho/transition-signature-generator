@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Transition Signature Generator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+
+  <style type="text/css">
+    body { padding:  2rem; max-width: 60rem; margin-left: auto; margin-right: auto;}
+    h2 { margin-top: 3rem; color: #c66666;}
+    .btn-primary { background-color: #c66666; border-color: #c66666; }
+    .btn-primary:hover { background-color: #e88888; border-color: #e88888;}
+    .signature-wrap p { margin-top: 1rem; }
+  </style>
+</head>
+
+<body>
+
+<h2>Generate your Transition Signature here</h2>
+<hr>
+
+<form id="input-form">
+  <div class="row">
+    <div class="form-group col">
+      <label for="name">Firstname Lastname</label>
+        <input type="text" id="name" class="form-control" placeholder="Petra Mustermensch">
+    </div>
+    <div class="form-group col">
+      <label for="position">Position</label>
+        <input type="text" id="position" class="form-control" placeholder="Position, Position">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label for="mail">Transition Mailadresse</label>
+        <input type="email" id="mail" class="form-control" value="…@transition-muc.de">
+    </div>
+    <div class="form-group col">
+      <label for="number">Mobilephone</label>
+        <input type="text" id="number" class="form-control" value="+49 160 0000000">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="form-group col">
+      <label for="mail">Optional Profile Linktext <small style="color:gray;">(e.g. LinkedIn or GitHub)</small></label>      
+        <input type="text" id="profile-link" class="form-control" placeholder="LinkedIn">
+    </div>
+    <div class="form-group col">
+      <label for="number">Optional Profile URL</label>
+        <input type="text" id="profile-link-url" class="form-control" placeholder="https://www.linkedin.com/in/…">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="form-group col">
+      <label for="mail">Optional Additional Linktext <small style="color:gray;">(e.g. some news or call to action)</small></label>      
+        <input type="text" id="addon-link" class="form-control" placeholder="Freelancer*in gesucht!">
+    </div>
+    <div class="form-group col">
+      <label for="number">Optional Additional URL</label>
+        <input type="text" id="addon-link-url" class="form-control" placeholder="https://transition-muc.de/…?">
+    </div>
+  </div>
+  <br>
+  <!-- <div class="row">
+    <div class="form-group">
+      <div class="form-check">
+        <input type="checkbox" class="" id="english-version">
+        <label class="form-check-label" for="english-version">English Version please</label>
+      </div>
+    </div>
+  </div> -->
+
+
+</form>
+
+
+<h2>Preview</h2>
+<hr>
+
+<div id="signature-wrap-de" class="signature-wrap active">
+  <br>
+  <style>a,a[href],a:hover{text-decoration:none !important;}</style>
+  <div style="font-family:sans-serif;font-size:13px;color:#404040;background:#fff;line-height:1.4;">
+    <div style="padding: 4px 0 3px 12px;border-left:7px solid #c66666;">
+      <b data-id="exp-name">Vorname Nachname</b> | <span data-id="exp-position">Position</span><br>
+      <a style="color:#404040 !important; text-decoration: none !important;" href="mailto:name@transition-muc.de" data-id="exp-mail">name@transition-muc.de</a> |
+      <a style="color:#404040 !important; text-decoration: none !important;" href="tel:+491600000000" data-id="exp-number">+49 160 0000000</a> 
+      <span data-id="exp-profile-wrapper" style="display: none;">| <a data-id="exp-profile-link" style="color:#c66666 !important; text-decoration: none !important;" href="">LinkedIn</a></span>
+      <p style="margin-bottom: 0"><a style="color:#404040 !important; text-decoration: none !important;" href="https://goo.gl/maps/z9PGW8fjpxu">Transition eG., c/o Impact HUB Munich, Gotzinger Straße 8, 81371 München</a><br>
+      Amtsgericht München VR 202808</p>
+      <p style="max-width: 460px; margin-bottom: 0;"><a style="font-size: 18px; color: #c66666 !important; text-decoration: none;" title="Mehr erfahren auf transition-muc.de" href="https://transition-muc.de">Gemeinsam für ein neues München – grün, bunt und fair. Sei dabei!
+&nbsp;<b style="white-space: nowrap;">&#x25b8;&#x200A;transition-muc.de</b></a></p>
+    </div>
+    <p data-id="exp-addon-wrapper" style="display: none;">Übrigens: <a data-id="exp-addon-link" style="color:#c66666 !important; text-decoration: none !important;" href="…">We are hiring</a></p>
+  </div>
+  <br><br><br>
+</div>
+
+<!-- <div id="signature-wrap-en" style="display:none;" class="signature-wrap">
+  <br>
+  <style>a,a[href],a:hover{text-decoration:none !important;}</style>
+  <div style="font-family:sans-serif;font-size:13px;color:#404040;background:#fff;line-height:1.4;">
+    <div style="padding: 4px 0 3px 12px;border-left:7px solid #c66666;">
+      <b data-id="exp-name">Vorname Nachname</b> | <span data-id="exp-position">Position</span><br>
+      <a style="color:#404040 !important; text-decoration: none !important;" href="mailto:name@transition-muc.de" data-id="exp-mail">name@transition-muc.de</a> |
+      <a style="color:#404040 !important; text-decoration: none !important;" href="tel:+491600000000" data-id="exp-number">+49 160 0000000</a> 
+      <span data-id="exp-profile-wrapper" style="display: none;">| <a data-id="exp-profile-link" style="color:#c66666 !important; text-decoration: none !important;" href="">LinkedIn</a></span>
+      <p style="margin-bottom: 0">Main office: <a style="color:#404040 !important; text-decoration: none !important;" href="https://goo.gl/maps/z9PGW8fjpxu">Transition eG., c/o Impact HUB Munich, Gotzinger Straße 8, DE-81371 Munich</a><br></p>
+      <p style="max-width: 480px; margin-bottom: 0;"><a style="color: #c66666 !important; text-decoration: none;" title="Mehr erfahren auf transition-muc.de" href="https://transition-muc.de">It is our vision to enable personalized learning and provide high quality educational resources for students worldwide – completely free of charge&nbsp;<b style="white-space: nowrap;">&#x25b8;&#x200A;transition-muc.de</b></a></p>
+    </div>
+    <p data-id="exp-addon-wrapper" style="display: none;">By the way: <a data-id="exp-addon-link" style="color:#c66666 !important; text-decoration: none !important;" href="…">We are hiring</a></p>
+  </div>
+  <br><br><br>
+</div> -->
+
+<h2>Copy</h2>
+<hr>
+<button class="btn btn-primary" id="copy-button-gmail">Copy Rich-Text (e.g. GMail)</button>
+<button class="btn btn-secondary" id="copy-button">Copy HTML</button>
+<hr>
+<textarea readonly="readonly" rows="7" class="form-control" id="textarea"></textarea>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+
+
+</body>
+</html>
+
