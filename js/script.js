@@ -2,7 +2,7 @@
 gEnglish = false;
 
 $('#input-form input').on('input', function() {
-	
+
   var $elem = $(this);
   var id = $(this).attr('id');
 
@@ -11,6 +11,8 @@ $('#input-form input').on('input', function() {
   else if (id==='english-version') { gEnglish = $('#english-version').is(":checked"); checkLanguage(); }
 
   else $('[data-id="exp-'+id+'"]').html( $elem.val() );
+
+  if (id === 'number') { setNumberLink($elem.val()) }
 
   if($('#profile-link').val().length>0 ) $('[data-id="exp-profile-wrapper"]').show();
   else $('[data-id="exp-profile-wrapper"]').hide();
@@ -37,6 +39,10 @@ function checkLanguage(){
     $('#signature-wrap-en').hide().removeClass('active');
     $('#signature-wrap-de').show().addClass('active');
   }
+}
+
+function setNumberLink(val){
+  $('[data-id="exp-number').attr('href', 'tel:' + val.replace(/\s+/g, ''));
 }
 
 $('#copy-button').click( function() {
